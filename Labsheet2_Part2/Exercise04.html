@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise04</title>
+</head>
+<body>
+    <script>
+        //01
+        const mammal={
+            color : "orange",
+            type : "cat",
+            legs : 4,
+            name : "kitty",
+            speed : 24,
+        };
+        document.write(mammal.type + "<br>");
+        document.write(mammal.name + "<br> <br> ");
+
+
+        //02
+        const person = {
+            firstName : "John",
+            lastName : "Doe",
+            id : 5566,
+            fullName : function(){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        var fName = person.fullName();
+        document.write(fName + "<br><br>");
+
+        //03
+        const triangle = {
+            height: 25, 
+            base: 24, 
+            color: "red",
+            area: function(){
+                return 0.5 * this.height * this.base;
+            }
+        };
+        var triArea = triangle.area();
+        document.write("The Height of the triangle is " + triangle.height + "<br>");
+        document.write("The Base of the triangle is " + triangle.base + "<br>");
+        document.write("The color of the triangle is " + triangle.color + "<br>");
+        document.write("The triangle area is " + triArea);
+
+
+    </script>
+</body>
+</html>

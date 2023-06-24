@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>q1</title>
+</head>
+<body>
+    <label>Enter Time:</label><br>
+    <input type="time" placeholder="Enter time" id="value"><br><br><br>
+    <input type="submit" name="submit" onclick="getGreeting()" value="Try it">
+    
+    <script>
+        function getGreeting() {
+            var timeInput = document.getElementById("value").value;
+            var currentTime = new Date();
+            var currentHour = parseFloat(timeInput.split(":")[0]);
+            var currentMinute = parseFloat(timeInput.split(":")[1]);
+
+            if (currentHour < 10 || (currentHour === 10 && currentMinute === 0)) {
+                document.write("Good morning");
+            } else if (currentHour < 20 || (currentHour === 20 && currentMinute === 0)) {
+                document.write("Good day");
+            } else {
+                document.write("Good evening");
+            }
+        }
+    </script>   
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>q2</title>
+</head>
+<body>
+    <label> Enter Fruit : </label><br>
+    <input type="text" placeholder = "enter fruit name" id = "value"> <br><br>
+    <input type="submit" name = "submit" onclick = "getFruitColor()" value = "Try IT">
+
+    <script>
+        function getFruitColor(){
+            let fruit = document.getElementById("value").value;
+            let color;
+            switch(fruit){
+                case "banana":  
+                    alert("Yellow");
+                    break;
+                case "pineapple":
+                    alert("Orange");
+                    break;
+                case "apple":
+                    alert("Green");
+                    break;
+            }
+        }  
+    </script>
+    
+</body>
+</html>

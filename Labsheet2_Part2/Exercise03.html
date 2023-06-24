@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise03</title>
+</head>
+<body>
+    <script>
+        //01
+        function calculateArea(r){
+            return((22/7)*r*r);
+        }
+        function calculatePerimeter(r){
+            return(2*(22/7)*r);
+        }
+
+        let area = calculateArea(7);
+        document.write("Area is " + area);
+        document.write("<br><br>");
+        let perimeter = calculatePerimeter(7);
+        document.write("Perimeter is " + perimeter);
+        document.write("<br><br>");
+
+
+        //02
+        function calculateVolume(a){
+            return(a*a*a);
+        }
+        let volume = calculateVolume(6)
+        document.write("The volume of the cube is " + volume);
+        document.write("<br><br>");
+
+
+        //03
+        message()
+        function message(){
+            var message = "hello, welcome to our paradise";
+            alert (message);
+        }
+
+
+    </script>
+    
+</body>
+</html>
