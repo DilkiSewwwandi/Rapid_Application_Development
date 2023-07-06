@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity 03</title>
+</head>
+<body>
+    <script>
+        class Dog {
+            constructor(breed, age, color, action) {
+                this.breed = breed;
+                this.age = age;
+                this.color = color;
+                this.action = action;
+            }
+            eat() {
+                document.write(this.breed + ' is eating.');
+              }
+            
+              sleep() {
+                document.write(this.breed + ' is sleeping.');
+              }
+            
+              sit() {
+                document.write(this.breed + ' is sitting.');
+              }
+              run() {
+                document.write(this.breed + ' is running.');
+              }
+        }
+
+        const dog1 = new Dog('Pug', '3 Years', 'Black');
+        const dog2 = new Dog('Boxer', '2 Years', 'White');
+        const dog3 = new Dog('Poodle', '1 Years', 'Brown');
+
+        document.write("Breed of the Dog is " + dog1.breed + "<br>");
+        dog1.eat();
+        
+        document.write("<br><br>" + "Age of the Dog is " + dog2.age + "<br>");
+        dog2.sit();
+
+        document.write("<br><br>" + "Color of the Dog is " + dog3.color + "<br>");
+        dog3.run();
+        
+    </script>
+</body>
+</html>
