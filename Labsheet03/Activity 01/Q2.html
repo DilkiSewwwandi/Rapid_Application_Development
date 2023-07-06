@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>q2</title>
+</head>
+<body>
+    <script>
+        var string = 'ProgrammoPhobia';
+        var lowerCaseString = convertToLowerCase(string);
+        document.write(lowerCaseString + "<br><br>");
+
+        var upperCaseString = convertToUpperCase(string);
+        document.write(upperCaseString + "<br><br>");
+
+        var splitValues = splitByCommas("Programmo,Phobia");
+        document.write(splitValues + "<br><br>");
+        
+        var indexOfPhobia = findIndexOfPhobia(string);
+        document.write(indexOfPhobia + "<br><br>");
+
+        function convertToLowerCase(str1) {
+            return str1.toLowerCase();
+        }
+
+        function convertToUpperCase(str1) {
+            return str1.toUpperCase();
+        }
+
+        function splitByCommas(str1) {
+            return str1.split(",");
+        }
+
+        function findIndexOfPhobia(str1) {
+            return str1.indexOf("Phobia");
+        }
+    </script>
+</body>
+</html>
