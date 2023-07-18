@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Scenario 02</title>
+</head>
+<body>
+    <script>
+        class Examination {
+            constructor(indexNumber, mcqMarks, essayMarks) {
+              this.indexNumber = indexNumber;
+              this.mcqMarks = mcqMarks;
+              this.essayMarks = essayMarks;
+              this.totalMarks = 0;
+              this.grade = '';
+              this.passStatus = false;
+            }
+          
+            calculateTotalMarks() {
+              this.totalMarks = this.mcqMarks + this.essayMarks;
+            }
+          
+            determinePassStatus() {
+              this.passStatus = this.totalMarks >= 50;
+            }
+          
+            calculateGrade() {
+              if (this.totalMarks >= 75) {
+                this.grade = 'Grade A';
+              } 
+              else if (this.totalMarks >= 65 && this.totalMarks < 75) {
+                this.grade = 'Grade B';
+              } 
+              else if (this.totalMarks >= 55 && this.totalMarks < 65) {
+                this.grade = 'Grade C';
+              } 
+              else if (this.totalMarks >= 35 && this.totalMarks < 55) {
+                this.grade = 'Grade S';
+              } 
+              else {
+                this.grade = 'Grade W';
+              }
+            }
+          
+            displayTotalMarks() {
+              document.write('Total Marks: ' + this.totalMarks  + "<br>");
+            }
+          
+            displayPassStatus() {
+              if (this.passStatus) {
+                document.write("Result: Pass" + "<br>");
+              } else {
+                document.write("Result: Fail"  + "<br>");
+              }
+            }
+          
+            displayGrade() {
+              document.write("Grade: " + this.grade  + "<br>");
+            }
+          }
+
+          const exam = new Examination('123', 75, 60);
+          exam.calculateTotalMarks();
+          exam.determinePassStatus();
+          exam.calculateGrade();
+          exam.displayTotalMarks();
+          exam.displayPassStatus();
+          exam.displayGrade();
+          
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 03</title>
+</head>
+<body>
+    <script>
+        class Book {
+            constructor(name, price, author, publisher) {
+                this.name = name;
+                this.price = price;
+                this.author = author;
+                this.publisher = publisher;
+            }
+        
+            calculateDiscount() {
+            }
+        
+            displayDetails() {
+                const discount = this.calculateDiscount();
+                const discountedPrice = this.price - (this.price * discount);
+        
+                document.write("Book: " + this.name + "<br>");
+                document.write("Author: " + this.author + "<br>");
+                document.write("Publisher: " + this.publisher + "<br>");
+                document.write("Price: " + this.price + "<br>");
+                document.write("Discount: " + (discount * 100) + "%" + "<br>");
+                document.write("Discounted Price: " + discountedPrice + "<br><br><br>");
+                document.write();
+            }
+        }
+        
+        class Novel extends Book {
+            calculateDiscount() {
+                return 0.15; 
+            }
+        }
+        
+        class ShortStory extends Book {
+            calculateDiscount() {
+                return 0.15; 
+            }
+        }
+        
+        class Biography extends Book {
+            calculateDiscount() {
+                return 0.10;
+            }
+        }
+        
+        class EducationalBook extends Book {
+            calculateDiscount() {
+                return 0.20; 
+            }
+        }
+        
+        const novel = new Novel("To Kill a Mockingbird", 15.99, "Harper Lee", "Publisher A");
+        const shortStory = new ShortStory("The Lottery", 9.99, "Shirley Jackson", "Publisher B");
+        const biography = new Biography("The Diary of a Young Girl", 12.99, "Anne Frank", "Publisher C");
+        const educationalBook = new EducationalBook("Mathematics Textbook", 39.99, "John Smith", "Publisher D");
+        
+        novel.displayDetails();
+        shortStory.displayDetails();
+        biography.displayDetails();
+        educationalBook.displayDetails();
+    </script>
+</body>
+</html>

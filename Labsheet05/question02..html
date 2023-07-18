@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 02</title>
+</head>
+<body>
+    <script>
+        class Solid {
+            calculateSurfaceArea() {}
+            calculateVolume() {}
+        }
+        
+        class Cube extends Solid {
+            constructor(side) {
+                super();
+                this.side = side;
+            }
+        
+            calculateSurfaceArea() {
+                return 6 * this.side * this.side;
+            }
+        
+            calculateVolume() {
+                return this.side * this.side * this.side;
+            }
+        }
+        
+        class Cuboid extends Solid {
+            constructor(length, width, height) {
+                super();
+                this.length = length;
+                this.width = width;
+                this.height = height;
+            }
+        
+            calculateSurfaceArea() {
+                return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+            }
+        
+            calculateVolume() {
+                return this.length * this.width * this.height;
+            }
+        }
+        
+        class Cylinder extends Solid {
+            constructor(radius, height) {
+                super();
+                this.radius = radius;
+                this.height = height;
+            }
+        
+            calculateSurfaceArea() {
+                return 2 * Math.PI * this.radius * this.radius + 2 * Math.PI * this.radius * this.height;
+            }
+        
+            calculateVolume() {
+                return Math.PI * this.radius * this.radius * this.height;
+            }
+        }
+        
+        class Sphere extends Solid {
+            constructor(radius) {
+                super();
+                this.radius = radius;
+            }
+        
+            calculateSurfaceArea() {
+                return 4 * Math.PI * this.radius * this.radius;
+            }
+        
+            calculateVolume() {
+                return (4 / 3) * Math.PI * this.radius * this.radius * this.radius;
+            }
+        }
+        
+        class Cone extends Solid {
+            constructor(radius, height) {
+                super();
+                this.radius = radius;
+                this.height = height;
+            }
+        
+            calculateSurfaceArea() {
+                const slantHeight = Math.sqrt(this.radius * this.radius + this.height * this.height);
+                return Math.PI * this.radius * (this.radius + slantHeight);
+            }
+        
+            calculateVolume() {
+                return (1 / 3) * Math.PI * this.radius * this.radius * this.height;
+            }
+        }
+        
+        const cube = new Cube(5);
+        document.write("Cube Surface Area: " + cube.calculateSurfaceArea() + "<br>");
+        document.write("Cube Volume: " + cube.calculateVolume()+ "<br><br>");
+        
+        const cuboid = new Cuboid(4, 5, 6);
+        document.write("Cuboid Surface Area: " + cuboid.calculateSurfaceArea()+ "<br>");
+        document.write("Cuboid Volume: " + cuboid.calculateVolume()+ "<br><br>");
+        
+        const cylinder = new Cylinder(3, 8);
+        document.write("Cylinder Surface Area: " + cylinder.calculateSurfaceArea()+ "<br>");
+        document.write("Cylinder Volume: " + cylinder.calculateVolume()+ "<br><br>");
+        
+        const sphere = new Sphere(6);
+        document.write("Sphere Surface Area: " + sphere.calculateSurfaceArea()+ "<br>");
+        document.write("Sphere Volume: " + sphere.calculateVolume()+ "<br><br>");
+        
+        const cone = new Cone(4, 7);
+        document.write("Cone Surface Area: " + cone.calculateSurfaceArea()+ "<br>");
+        document.write("Cone Volume: " + cone.calculateVolume()+ "<br><br>");
+    </script>
+</body>
+</html>

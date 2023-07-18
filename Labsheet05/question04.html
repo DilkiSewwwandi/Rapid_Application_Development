@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Question 04</title>
+</head>
+<body>
+    <script>
+        class Game {
+            constructor(name, winningScore) {
+                this.name = name;
+                this.winningScore = winningScore;
+                this.players = [];
+            }
+
+            addPlayer(player) {
+                this.players.push(player);
+            }
+
+            displayWinningMessage(player) {
+                document.write("Congratulations, " + player.name + "! You've reached the winning score in " + this.name + "<br><br>");
+            }
+
+            displayLosingMessage(player) {
+                document.write("Sorry, " + player.name + "! You've lost the game in  " + this.name + ". Try again!"  + "<br><br>");
+            }
+        }
+
+        // CarGame class
+        class CarGame extends Game {
+            constructor() {
+                super('Car Games', 100);
+            }
+        }
+
+        // PuzzleGame class
+        class PuzzleGame extends Game {
+            constructor() {
+                super('Puzzle Games');
+            }
+
+            displayWinningMessage(player) {
+                document.write("Congratulations, " + player.name + "! You've completed the puzzle within the time in "+ this.name + "<br><br>");
+            }
+        }
+
+        // ShootingGame class
+        class ShootingGame extends Game {
+            constructor() {
+                super('Shooting Games');
+            }
+
+            displayWinningMessage(player) {
+                document.write("Congratulations, " + player.name + "! You've completed the mission in " + this.name  + "<br><br>");
+            }
+        }
+
+        // Player class
+        class Player {
+            constructor(name, theme, avatar) {
+                this.name = name;
+                this.theme = theme;
+                this.avatar = avatar;
+            }
+
+            pauseGame() {
+                document.write(this.name + ", game paused.");
+            }
+
+            resumeGame() {
+                document.write(this.name + ", game resumed.");
+            }
+
+            cancelGame() {
+                document.write(this.name + ", game canceled.");
+            }
+        }
+        const carGame = new CarGame();
+        const puzzleGame = new PuzzleGame();
+        const shootingGame = new ShootingGame();
+
+        const player1 = new Player('John', 'Theme 1', 'Avatar 1');
+        const player2 = new Player('Alice', 'Theme 2', 'Avatar 2');
+
+        carGame.addPlayer(player1);
+        puzzleGame.addPlayer(player2);
+        shootingGame.addPlayer(player1);
+
+        carGame.displayWinningMessage(player1);
+        puzzleGame.displayWinningMessage(player2);
+        shootingGame.displayWinningMessage(player1);
+    </script>
+
+    
+</body>
+</html>
